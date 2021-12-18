@@ -181,6 +181,10 @@ p {
   border-color: transparent;
   letter-spacing: 0.06em;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: box-shadow, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-function);
 }
 
 /*Наши преимущества */
@@ -365,7 +369,7 @@ img {
   line-height: 1.16;
   text-align: center;
   margin: 0;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 .client .title {
   font-weight: 700;
@@ -593,7 +597,7 @@ img {
 .projects-link:focus .description-image {
   transform: translateY(0);
 }
-.projects-link {
+.products .link {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -609,13 +613,11 @@ img {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
-.project .title {
+.projects .title {
   display: none;
 }
-.project .btn {
+.projects .btn {
   display: flex;
-}
-.project .item {
 }
 
 .projects {
@@ -650,4 +652,51 @@ img {
 .projects-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms var(--time-function),
+    visibility 250ms var(--time-function);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0; /* прозрачность */
+  pointer-events: none; /* пропускать клик */
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal {
+  height: 582px;
+  width: 528px;
+  background-color: var(--additional-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition-timing-function: var(--time-function);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transform: translate(-50%, -50%) scale(1);
+}
+.close-btn {
+  display: flex;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
