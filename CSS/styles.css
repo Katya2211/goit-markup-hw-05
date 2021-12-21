@@ -357,10 +357,7 @@ img {
   transition-duration: 250ms;
   transition-timing-function: var(--time-function);
 }
-.team-social-link:hover,
-.team-social-link:focus {
-  fill: var(--additional-color);
-}
+
 .team-social-link:hover,
 .team-social-link:focus {
   background-color: var(--accent-color);
