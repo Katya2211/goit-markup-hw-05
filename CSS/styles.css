@@ -166,6 +166,8 @@ p {
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 .hero .button {
   font-weight: 700;
@@ -179,7 +181,7 @@ p {
   display: inline-block;
   padding: 10px 32px;
   margin-top: 30px;
-  border-color: transparent;
+  border: transparent;
   letter-spacing: 0.06em;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -221,6 +223,7 @@ p {
   color: var(--litle-text-color);
   margin-bottom: 10px;
   align-items: center;
+  text-transform: uppercase;
 }
 .feature-list .text {
   font-weight: 400;
@@ -350,7 +353,9 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
-  transition: color 250ms var(--time-function);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-function);
 }
 .team-social-link:hover,
 .team-social-link:focus {
@@ -397,7 +402,9 @@ img {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
-  transition: color 250ms var(--time-function);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--time-function);
 }
 .company-item {
   width: 170px;
@@ -469,6 +476,7 @@ img {
   color: var(--primary-text-color);
   text-decoration: none;
   font-style: normal;
+  transition: color 250ms var(--time-function);
 }
 .title-footer {
   font-weight: bold;
